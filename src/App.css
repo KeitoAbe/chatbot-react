@@ -1,0 +1,478 @@
+@import url(https://use.fontawesome.com/releases/v5.3.1/css/all.css);
+/*------------------------------
+ Reset Style
+ 
+------------------------------*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+    
+}
+
+*{
+    touch-action: pan-y;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+hr {
+    display:block;
+    height:1px;
+    border:0;
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+/*------------------------------
+Common Style
+------------------------------*/
+body {
+	font-size: 100%;
+	font-family:'繝偵Λ繧ｮ繝手ｧ偵ざ Pro W3','Hiragino Kaku Gothic Pro','繝｡繧､繝ｪ繧ｪ',Meiryo,'�ｭ�ｳ �ｰ繧ｴ繧ｷ繝�け',sans-serif;
+	color: #222;
+  background-image:
+  repeating-linear-gradient(to bottom,
+  transparent 25px,
+  rgba(0, 0, 0, 0.04) 26px,  rgba(0, 0, 0, 0.04) 26px,
+  transparent 27px,  transparent 51px,
+  rgba(0, 0, 0, 0.04)2px,  rgba(0, 0, 0, 0.04) 52px,
+  transparent 53px,  transparent 77px,
+  rgba(0, 0, 0, 0.04) 78px,  rgba(0, 0, 0, 0.04) 78px,
+  transparent 79px,  transparent 103px,
+  rgba(0, 0, 0, 0.04) 104px,  rgba(0, 0, 0, 0.04) 104px,
+  transparent 105px,  transparent 129px,
+  rgba(0, 0, 0, 0.04) 130px,  rgba(0, 0, 0, 0.04) 130px),
+  repeating-linear-gradient(to right,
+  transparent 25px,
+  rgba(0, 0, 0, 0.04) 26px,  rgba(0, 0, 0, 0.04) 26px,
+  transparent 27px,  transparent 51px,
+  rgba(0, 0, 0, 0.04) 52px,  rgba(0, 0, 0, 0.04) 52px,
+  transparent 53px,  transparent 77px,
+  rgba(0, 0, 0, 0.04) 78px,  rgba(0, 0, 0, 0.04) 78px,
+  transparent 79px,  transparent 103px,
+  rgba(0, 0, 0, 0.04) 104px,  rgba(0, 0, 0, 0.04) 104px,
+  transparent 105px,  transparent 129px,
+  rgba(0, 0, 0, 0.04) 130px,  rgba(0, 0, 0, 0.04) 130px);
+}
+header{
+    height: 53px;
+    position: fixed;
+    background-color: #fff;
+    width: 100%;
+    max-width: 650px;
+    z-index: 8;
+    border-bottom: 1px solid #eee;
+}
+a {
+    color: #007edf;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.wrapper {
+    display: flex;
+    margin: 0 auto 50px;
+    padding: 0 20px;
+    max-width: 1200px;
+    align-items: flex-start;
+}
+
+h1 {
+	margin-bottom: 30px;
+    font-size: 100%;
+    color: #222;
+    text-align: center;
+}
+.back {
+    text-decoration: none;
+    color: #94847b;
+    font-weight: bold;
+    display: block;
+    padding: 18px 22px 18px 22px;
+    float: left;
+}
+.do_tweet {
+    font-weight: bold;
+    margin-left: 68px;
+    line-height: 110%;
+    font-size: 1.1rem;
+    padding: 17px 0 17px 0;
+}
+/*-----------------------------------
+蜈･蜉帙お繝ｪ繧｢
+-----------------------------------*/
+
+label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 86%;
+}
+
+input[type="text"],
+textarea {
+	margin-bottom: 20px;
+	padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background: #fff;
+    font-size: 16px;
+}
+textarea {
+    width: calc(100% - 100px);
+    height: 1rem;
+}
+input[type="submit"] {
+	appearance: none;
+    -webkit-appearance: none;
+    padding: 10px 20px;
+    font-size: 86%;
+    line-height: 1.0em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #fdf1c8;
+    color: #94847b;
+    font-weight:bold;
+    position: absolute;
+    top: 3px;
+    right: 13px;
+
+}
+input[type=submit]:hover,
+button:hover {
+    background-color: #fdf1c8;
+}
+
+hr {
+	margin: 20px 0;
+	padding: 0;
+}
+
+.success_message {
+    margin-bottom: 20px;
+    padding: 10px;
+    color: #48b400;
+    border-radius: 10px;
+    border: 1px solid #4dc100;
+}
+
+.error_message {
+    margin-bottom: 20px;
+    padding: 10px;
+    color: #ef072d;
+    list-style-type: none;
+    border-radius: 10px;
+    border: 1px solid #ff5f79;
+}
+
+.success_message,
+.error_message li {
+    font-size: 86%;
+    line-height: 1.6em;
+}
+
+
+/*-----------------------------------
+謗ｲ遉ｺ譚ｿ繧ｨ繝ｪ繧｢
+-----------------------------------*/
+
+article {
+	margin-top: 20px;
+	padding: 20px;
+	border-radius: 10px;
+	background: #fff;
+}
+article.reply {
+    position: relative;
+    margin-top: 15px;
+    margin-left: 30px;
+}
+article.reply::before {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    display: block;
+    content: "";
+    border-top: none;
+    border-left: 7px solid #f7f7f7;
+    border-right: 7px solid #f7f7f7;
+    border-bottom: 10px solid #fff;
+}
+	.info {
+		margin-bottom: 10px;
+	}
+	.info h2 {
+		display: inline-block;
+		margin-right: 10px;
+		color: #222;
+		line-height: 1.6em;
+		font-size: 86%;
+	}
+	.info time {
+		color: #999;
+		line-height: 1.6em;
+		font-size: 72%;
+	}
+    article p {
+        color: #555;
+        font-size: 86%;
+        line-height: 1.6em;
+    }
+    /*******************************
+* 蟾ｦ縺九ｉ縺ｮ蜷ｹ縺榊�縺�
+********************************/
+.left_balloon {
+    position: relative;
+    background: #efefef;
+    border: 1px solid #efefef;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 15px;
+    clear: both;
+    max-width: 500px;
+    float: left;
+    line-height:1.3rem;
+    margin-left: 55px;
+}
+.left_balloon:after,
+.left_balloon:before {
+    right: 100%;
+    top: 45%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+.left_balloon:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-right-color: #efefef;
+    border-width: 7px;
+    margin-top: -7px;
+}
+.left_balloon:before {
+    border-color: rgba(0, 0, 0, 0);
+    border-right-color: #efefef;
+    border-width: 8px;
+    margin-top: -8px;
+}
+.chat_left{
+    display: flex;
+    padding-right: 80px;
+}
+.post_date_left{
+    margin-top: auto;
+    margin-bottom: 10px;
+    font-size: 0.6em;
+    color: #8a9aa4;
+}
+.icon_img{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    z-index: 2;
+    padding: 5px;
+}
+/*******************************
+* 蜿ｳ縺九ｉ縺ｮ蜷ｹ縺榊�縺�
+********************************/
+.right_balloon {
+    position: relative;
+    background: #fdf1c8;
+    border: 1px solid #fdf1c8;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 15px;
+    clear: both;
+    max-width: 500px;
+    float: right;
+    line-height:1.2rem;
+    margin-left: 5px;
+}
+.right_balloon:after,
+.right_balloon:before {
+    left: 100%;
+    top: 45%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+.right_balloon:after {
+    border-color: rgba(133, 226, 73, 0);
+    border-left-color: #fdf1c8;
+    border-width: 7px;
+    margin-top: -7px;
+}
+.right_balloon:before {
+    border-color: rgba(119, 119, 119, 0);
+    border-left-color: #fdf1c8;
+    border-width: 8px;
+    margin-top: -8px;
+}
+.chat_right{
+    display: flex;
+    padding-left: 80px;
+}
+.post_date_right{
+    margin-top: auto;
+    margin-bottom: 15px;
+    font-size: 0.6em;
+    color: #8a9aa4;
+    margin-left: auto;
+}
+.message{
+    margin-bottom:0px;
+}
+.container{
+    padding-top: 55px;
+}
+.form {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-width: 650px;
+    background-color: #fff;
+    z-index: 9;
+    display: flex;
+    border-top: 1px solid #eee;
+}
+/*******************************
+* 蜑ｲ繧願ｾｼ縺ｿ繧定ｧ｣髯､
+********************************/
+.clear_balloon{
+  clear: both;
+}
+.name {
+  margin-left:15px;font-size:0.7em;
+  margin-top: 5px;
+}
+.message {
+    margin: 6px 1px 5px 5px;
+    width: calc(100% - 70px);
+    max-width: 600px;
+    border-radius: 20px;
+    background-color: #f5f5f5;
+}
+.container {
+    padding-bottom: 50px;
+}
+.swal-button--confirm {
+    background-color: #fdf1c8;
+    color: #94847b;
+  }
+  .swal-button--confirm:focus {
+    box-shadow:0 0 0 1px #fff,0 0 0 3px #fdf1c8;
+  }
+  .swal-button--confirm:hover{
+    background-color:  #fdf1c8!important;
+    opacity: 0.9;
+  }
+  .send_icon{
+    position: absolute;
+    padding: 12px 9px;
+    cursor: pointer;
+    right: 0;
+  }
+  .maxWidth {
+      max-width: 650px;
+      margin: 0 auto;
+  }
+
+
+@media only screen and (max-width: 1000px) {
+
+    body {
+        padding: 0px;
+    }
+
+}
