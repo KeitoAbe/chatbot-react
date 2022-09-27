@@ -18,9 +18,11 @@ function left_balloon(text: string) {
 
 function App() {
   const [text, setText] = useState("");
-  const write_message = () => {
-    console.log(text);
-  };
+  const [rightText, setRightText] = useState<string[]>([]);
+  function write_message() {
+    setRightText([...rightText, text]);
+    setText("");
+  }
 
   return (
     <div>
@@ -36,6 +38,17 @@ function App() {
             <div className="chat_container">
               {left_balloon("私はどく子！！\nd-salonのキャラクターだよ！")}
               {left_balloon("獨協大学のことなら何でも聞いてね！")}
+              {rightText.map((text) => {
+                return (
+                  <div>
+                    <div className="chat_right">
+                      <p className="post_date_right"></p>
+                      <p className="right_balloon">{text}</p>
+                      <br className="clear_balloon" />
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </section>
         </div>
