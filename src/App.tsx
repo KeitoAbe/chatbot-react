@@ -1,5 +1,14 @@
 import { useState } from "react";
 import "./App.css";
+let bot_dictionary: any;
+
+fetch(
+  "https://script.google.com/macros/s/AKfycbyFUSiOd75JyMGfUlkRqHmtBGuIq5YMaXE5lmllIquPt6REsGwO3ua3EuBvqRN77RMkKw/exec"
+)
+  .then((res) => res.json())
+  .then((result) => {
+    bot_dictionary = result;
+  });
 
 function left_balloon(text: string) {
   return (
@@ -18,10 +27,27 @@ function left_balloon(text: string) {
 
 function App() {
   const [text, setText] = useState("");
-  const [rightText, setRightText] = useState<string[]>([]);
+  const [replyText, setReplyText] = useState<string[]>([]);
   function write_message() {
-    setRightText([...rightText, text]);
+    if (text !== "") {
+      setReplyText([...replyText, text]);
+    }
     setText("");
+  }
+
+  function answer(question: string) {
+    if (
+      bot_dictionary.some(
+        (u: any) => ~question.indexOf(u.key1) && ~question.indexOf(u.key2)
+      )
+    ) {
+      let dokuta_answer = bot_dictionary.find(
+        (u: any) => ~question.indexOf(u.key1) && ~question.indexOf(u.key2)
+      );
+      return dokuta_answer["ans"];
+    } else {
+      return "うーん、難しい…\n履修登録、PorTaⅡ、図書館などについて聞いてほしい！";
+    }
   }
 
   return (
@@ -38,12 +64,25 @@ function App() {
             <div className="chat_container">
               {left_balloon("私はどく子！！\nd-salonのキャラクターだよ！")}
               {left_balloon("獨協大学のことなら何でも聞いてね！")}
-              {rightText.map((text) => {
+              {replyText.map((text) => {
                 return (
                   <div>
                     <div className="chat_right">
                       <p className="post_date_right"></p>
                       <p className="right_balloon">{text}</p>
+                      <br className="clear_balloon" />
+                    </div>
+                    <p className="name">どく子ちゃん</p>
+                    <div className="chat_left">
+                      <img className="icon_img" src="src/img/dokuta.png"></img>
+                      <p
+                        className="left_balloon"
+                        style={{ whiteSpace: "pre-line" }}
+                      >
+                        <div
+                          dangerouslySetInnerHTML={{ __html: answer(text) }}
+                        ></div>
+                      </p>
                       <br className="clear_balloon" />
                     </div>
                   </div>
